@@ -1,0 +1,5 @@
+<h1>Vendiste tu primer producto <%= @order.product.title %></h1>
+<p>
+  Fue vendido a <%= @order.customer.email %>
+  Total: $<%= @order.price * @order.quantity %>
+</p>
