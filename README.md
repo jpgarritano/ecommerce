@@ -21,3 +21,33 @@ Configurado para usar con mailCatcher, en caso contrario configurar smtp_setting
 Importar en Postman el archivo: ecommerce.postman_collection.json
 
 Los cambios sobre productos y categorias se registran en tabla versions, junto con el usuario que hizo la modificacion por api (gema paper_trail).
+
+
+Ordenes:
+GET /orders
+  parametros aceptados:
+    category_id, customer_id, user_id (admin), from (fecha con formato YYYY-MM-DD), to (fecha con formato YYYY-MM-DD)
+    granularity (year, month, week, day)
+
+
+Comprar:
+POST /checkout
+{
+    "email": "usuario@mail.com",
+    "product_id": 10,
+    "quantity": 1
+}
+
+Productos mas vendidos
+GET /orders/most_selled_products
+
+Productos que mas recaudaron
+GET /most_collected_products
+
+
+Login:
+POST /sessions/authenticate
+{
+    "email": "admin@puntospoint.com",
+    "password": "123123"
+}
